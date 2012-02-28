@@ -16,7 +16,7 @@ app.photos = (function() {
 			
 			$("form.post").submit(function(e) {
 				document.body.style.cursor = "wait";
-				app.dialog.set_message("Uploading photo...", "loading");
+				app.dialog.set_message(I18n.t("photos.create.upload"), "loading");
 			});
 		}
 	};

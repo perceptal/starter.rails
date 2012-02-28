@@ -1,0 +1,22 @@
+<article class="search">
+	{{if profile_image_thumbnail_url}}
+		<img src="${profile_image_thumbnail_url}"></img>
+	{{else}}
+		<img src="/assets/noprofile.png"></img>
+	{{/if}}
+	<div class="info">
+		<span data-resource="${resource}" data-area="${area}" class="resource">
+			<strong class="content">${full_name}</strong>
+			<span>
+				{{if left_on}}
+					{{if type=="Staff"}}<span class="info">terminated</span>{{/if}}
+				{{/if}}
+			</span>
+		</span>
+		<div class="content">
+			{{if phone}}<span class="info">${phone}</span>{{/if}}
+			{{if user}}<a href="mailto:${user.email}">${user.email}</a>{{/if}}
+		</div>
+	</div>
+	<div class="open"><a href="${uri}">open&rarr;</a></div>
+</article>

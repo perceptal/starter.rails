@@ -14,7 +14,7 @@ app.save = (function() {
 			})
 			.error(function(status) {
 				console.log(status);
-				app.dialog.set_message("Error", "error");
+				app.dialog.set_message(I18n.t("error.application"), "error");
 			})
 			.complete(function() {
 				$(".reveal-modal-bg").fadeOut(200);
@@ -33,7 +33,7 @@ app.save = (function() {
 		button.attr("data-value", button.val());
 		button
 			.attr("disabled", true)
-			.val(button.attr("data-submit-message") || "Saving...");
+			.val(button.attr("data-submit-message") || I18n.t("saving"));
 	}
 	
 	function enable_button(form) {
@@ -41,7 +41,7 @@ app.save = (function() {
 
 		button
 			.attr("disabled", false)
-			.val(button.attr("data-value") || "Save &rarr;");
+			.val(button.attr("data-value") || I18n.t("save") + "&rarr;");
 	}
 			
 	return {
@@ -88,8 +88,8 @@ app.save = (function() {
 				e.stopPropagation();
 				
 				var url = $(this).attr("href");
-				var message = $(this).data("message") || "Deleting...";
-				var confirm = $(this).data("confirm") || "Are you sure you want to delete?";
+				var message = $(this).data("message") || I18n.t("deleting");
+				var confirm = $(this).data("confirm") || I18n.t("confirm");
 				
 				app.dialog.confirm(function() {					
 					app.dialog.set_message(message, "loading");	

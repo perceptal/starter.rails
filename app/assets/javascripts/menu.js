@@ -94,7 +94,7 @@ app.menu = (function() {
 					app.menu.display(content, status.responseText, route, url);
 				} else {
 					var message = "Error";
-					if (status.status == 404) message = "Page Not Found";
+					if (status.status == 404) message = I18n.t("error.not_found");
 					
 					app.dialog.set_message(message, "error");
 					

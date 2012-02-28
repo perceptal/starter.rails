@@ -68,10 +68,10 @@ app.searching = (function() {
 			console.log(status);
 			
 			if (status.status == 503) {
-				app.dialog.set_message("You must be signed in to search", "warning");
+				app.dialog.set_message(I18n.t("search.index.secure"), "warning");
 			}
 			else {
-				app.dialog.set_message("Error", "error");
+				app.dialog.set_message(I18n.t("error.application"), "error");
 			}
 		})
 		.complete(function() { 
@@ -116,22 +116,22 @@ app.searching = (function() {
 	function fix_environment(area) {
 		$("nav > ul").attr("class", area);
 		$("body").attr("class", area);
-		$(document).attr("title", "Search Results |" + $(document).attr("title").split("|")[1]);
+		$(document).attr("title", I18n.t("search.index.title") + " |" + $(document).attr("title").split("|")[1]);
 	}
 
 	function build_message(data, q) {
-		var type = "info", message = data.total + " results found";
+		var type = "info", message = data.total + I18n.t("search.index.some_results");
 
 		if (q.length === 0) {
 			type = "error";
-			message = "No search information";
+			message = I18n.t("search.index.error");
 		}
 		else if (data.total === 0) {
 			type = "warning";
-			message = "No results found";
+			message = I18n.t("search.index.no_results");
 		}
 		else if (data.total == 1) {
-			message = "1 result found";
+			message = I18n.t("search.index.one_result");
 		}
 		
 		return { type: type, text: message };

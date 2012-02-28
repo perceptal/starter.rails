@@ -21,8 +21,6 @@ Starter::Application.routes.draw do
   
   resources :sessions
   
-  resources :claims
-  
   resources :staff do
     resources :roles
     

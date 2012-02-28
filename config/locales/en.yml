@@ -37,6 +37,9 @@ en:
   hide: "hide"
   show_all: "show all"
   hide_all: "hide all"
+  saving: "Saving..."
+  save: "Save"
+  delete: "Deleting..."
   
   error:
     application: "An unexpected error has occurred"
@@ -121,7 +124,7 @@ en:
       
       photo:
         image: "Select image"
-      
+        
       group:
         name: "Name"
         code: "Code"
@@ -142,10 +145,11 @@ en:
   photos:
     index:
       error: "There are no uploaded photos"
-
+      
     create:
       success: "The photo has been successfully uploaded"
       error: "There was a problem uploading the photo"
+      upload: "Uploading photo..."
         
     default:
       success: "The profile photo has been changed"
@@ -278,6 +282,17 @@ en:
     update:
       success: "The information has been saved"
       error: "There was a problem saving the information"
+      
+  search:
+    index:
+      secure: "You must be signed in to search"
+      error: "No search information"
+      title: "Search Results"
+      results: "results"
+      found: "found"
+      some_results: " results found"
+      no_result: "No results found"
+      one_result: "1 result found"
         
   locations:
     index:

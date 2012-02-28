@@ -7,8 +7,8 @@ $().ready(function() {
 	app.menu.click("nav#menu a");
 	
 	// Enable ajax search
-//	app.searching.init($("input#search"), "/search.json", "search", 
-//		app.utils.load_template("search/person.html"), false, "q");
+	app.searching.init($("input#search"), "/search.json", "search", 
+		app.utils.load_template("search/person.html"), false, "q");
 		
 	// Initialise controller-specific scripts
 	var body = $("body");

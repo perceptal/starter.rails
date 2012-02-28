@@ -1,0 +1,16 @@
+{{if total > limit}} 
+	<p class="paging">
+		Showing ${skip + 1} to {{if skip + limit > total}}${total}{{else}}${skip + limit}{{/if}} of ${total}
+		{{if page == 1}}	
+			&larr;previous
+		{{else}}
+			<a href="${window.location}" class="previous">&larr;previous</a>
+		{{/if}}
+		|
+		{{if skip + limit >= total}}	
+			next&rarr;
+		{{else}}
+			<a href="${window.location}" class="next">next&rarr;</a>
+		{{/if}}
+	</p>
+{{/if}}
