@@ -1,0 +1,9 @@
+= content_for :sidebar do
+	== render :partial => "sidebar/organisation", :locals => { :organisation => group }
+	
+== render :partial => "admin/organisations/menu"
+	
+= semantic_form_for role, :url => admin_organisation_roles_path(group), :validate => true do |f|
+	= f.inputs :name
+	= submit f, "Save", group, :update
+

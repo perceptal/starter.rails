@@ -1,0 +1,7 @@
+header
+	== render :partial => "admin/organisations/pages"
+	== render :partial => "admin/organisations/actions"
+
+	.root
+		nav.organisations
+			=link :select_organisation, admin_organisations_path, Group, :read, false

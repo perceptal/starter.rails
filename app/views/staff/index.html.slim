@@ -1,0 +1,7 @@
+= content_for :sidebar do
+	=title :title
+
+== render :partial => "links"
+	
+== render :partial => "search/person", :collection => active
+== render :partial => "shared/paging", :locals => { :total => active_total }

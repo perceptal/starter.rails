@@ -1,0 +1,9 @@
+article.photo
+	.image title=photo.caption
+		= image_tag photo.image.url(:small), "data-image" => photo.image.url(:large)
+		
+		- if can? :update, person
+			= link_to raw("&nbsp;"), send("default_#{owner}_photo_path", person, photo), :method => "put", :class => "default", :title => "set as profile photo", "data-tooltip-position" => "top"
+		
+		- if can? :update, person
+			= link_to raw("&nbsp;"), send("#{owner}_photo_path", person, photo), :method => "delete", :class => "delete", :title => "delete photo", "data-tooltip-position" => "top"

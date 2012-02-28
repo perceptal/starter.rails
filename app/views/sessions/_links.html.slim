@@ -1,0 +1,8 @@
+nav#security.two.columns.omega
+	ul class=controller_name
+		- if (current_user)
+			li.sign_out
+				= link_to t("navigation.sign_out"), sign_out_path, :title => "Signed in as #{current_user.person.full_name}"
+		- else
+			li.sessions
+				= link_to t("navigation.sign_in"), sign_in_path

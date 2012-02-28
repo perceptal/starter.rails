@@ -1,0 +1,8 @@
+header
+	.root
+		nav.staff
+			=link :recent_staff, recent_staff_index_path, Staff, :read, 'staff', 'recent'
+			=link :current_staff, staff_index_path, Staff, :read, 'staff', 'index'
+			=link :terminated, terminated_staff_index_path, Staff, :read, 'staff', 'inactive'
+			=link :register_staff, new_staff_path, Staff, :create, 'staff', 'new'
+			

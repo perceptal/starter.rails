@@ -1,0 +1,29 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: starter
+  pool: 5
+  username: root
+  password:
+
+test:
+  adapter: sqlite3
+  database: db/test.sqlite3
+  pool: 5
+  timeout: 5000
+
+staging:
+  adapter: postgresql
+  encoding: unicode
+  database: starter
+  pool: 5
+  username: postgresql
+  password:
+      
+production:
+    adapter: postgresql
+    encoding: unicode
+    database: starter
+    pool: 5
+    username: postgresql
+    password:

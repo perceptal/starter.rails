@@ -1,0 +1,7 @@
+nav.pages
+	a title=t(:page) data-tooltip-position="top"
+	ul data-area="organisations"
+		=menu :org_info, admin_organisation_path(group), group, :read, 'organisations', 'show'
+		=menu :security, admin_organisation_roles_path(group), group, :read, 'permissions'
+		=menu :locations, admin_organisation_locations_path(group), group, :read, 'locations', 'index,edit,show,update'
+

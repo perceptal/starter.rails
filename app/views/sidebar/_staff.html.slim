@@ -1,0 +1,17 @@
+- if person.user && person.user.is_locked
+	.content
+		em.locked= t(:locked)
+
+.content= person.job_title
+.content= person.group.name
+- if person.location != person.group
+	.content
+		em= person.location.name	
+- if !person.reason_for_leaving.nil?
+	.content
+		em title=person.reason_for_leaving
+			= t(:terminated)
+	
+.content
+	em= person.phone
+	

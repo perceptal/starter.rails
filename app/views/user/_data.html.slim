@@ -1,0 +1,15 @@
+article
+	| Welcome 
+	em= current_user.person.first_name
+
+- if !current_user.last_sign_on.nil?
+	article
+		| Last sign on 
+		em= current_user.last_sign_on.strftime "%d %B %Y"
+		|  at 
+		em= current_user.last_sign_on.strftime "%k:%M"
+
+- if !current_user.ip.nil?	
+	article
+		| IP 
+		em= current_user.ip

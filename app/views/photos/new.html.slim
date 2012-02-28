@@ -1,0 +1,10 @@
+= content_for :sidebar do
+	== render :partial => "sidebar/person", :locals => { :person => person }
+	
+== render :partial => "#{owner.pluralize}/menu"
+	
+= semantic_form_for photo, :url => send("#{owner}_photos_path"), :validate => true, :html => { :class => "post" } do |f|
+	= f.inputs do
+		= f.input :image, :as => :file
+		= f.input :caption
+	= submit f, :save, patient, :update, :message

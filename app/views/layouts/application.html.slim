@@ -1,0 +1,49 @@
+doctype html
+html lang="en"	
+	
+	head
+		title= yield :title
+		meta charset="utf-8"
+		meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"
+		
+		/[ if lt IE 9 ]
+			script src="http://html5shim.googlecode.com/svn/trunk/html5.js"
+			
+		- if jasminerice?
+			= stylesheet_link_tag 'spec'
+			= javascript_include_tag 'spec'
+		- else
+			= stylesheet_link_tag "application"
+			= javascript_include_tag "application"
+		
+		script type="text/javascript"
+		  = "I18n.defaultLocale =  '#{I18n.default_locale}';"
+		  = "I18n.locale = '#{I18n.locale}';"
+		
+		= favicon_link_tag "/assets/favicon.ico"
+		
+		= yield :head
+		= csrf_meta_tags
+		
+	body class=area_name data-controller=controller_name data-action=action_name data-password=force_password_change
+		.container
+			== render :partial => "shared/header"
+			
+			.row
+				#content
+					aside#sidebar.three.columns.alpha.shift-right
+						= yield :sidebar	
+
+					section#main.eleven.columns.shift-left
+						= yield	
+						
+					== render :partial => "shared/response"
+					== render :partial => "shared/message"
+					== render :partial => "shared/confirm"
+					
+				== render :partial => "shared/menu"
+						
+			== render :partial => "shared/footer"
+
+			br
+			= debug(params) if Rails.env.development?

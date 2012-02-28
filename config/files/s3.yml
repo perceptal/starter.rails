@@ -1,0 +1,19 @@
+development:
+  bucket: development.starter.perceptal.co.uk
+  key: AKIAJ5Z2XQBL24QJIYCA
+  secret: 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
+
+test:
+  bucket: test.starter.perceptal.co.uk
+  key: AKIAJ5Z2XQBL24QJIYCA
+  secret: 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
+
+staging:
+  bucket: production.starter.perceptal.co.uk
+  key: AKIAJ5Z2XQBL24QJIYCA
+  secret: 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
+
+production:
+  bucket: production.starter.perceptal.co.uk
+  key: AKIAJ5Z2XQBL24QJIYCA
+  secret: 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

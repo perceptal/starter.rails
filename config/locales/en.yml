@@ -1,0 +1,298 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  activerecord:
+    errors:
+      messages:
+        blank: "must be entered"
+        email: "is not a valid address"
+        too_short: "is too short"
+        taken: "is already registered"
+        mobile_phone: "is not a valid mobile number"
+        landline_phone: "is not a valid landline number"
+        confirmation: "and confirm it below"
+
+  name: "Starter"
+  title: "Starter &rarr; Get Going"
+  response: "Page loaded in <em>%{time}</em> seconds"
+  action: "Select Action"
+  page: "Select Page"
+  locked: "Locked"
+  terminated: "Terminated"
+  not_assigned: "Not assigned"
+  no_data: "No data"
+  search: "Search"
+  confirm: "Are you sure?"
+  yes: "Yes"
+  no: "No"
+  showing: "Showing"
+  to: "to"
+  of: "of"
+  next: "next"
+  previous: "previous"
+  open: "open"
+  close: "close"
+  show: "show"
+  hide: "hide"
+  show_all: "show all"
+  hide_all: "hide all"
+  
+  error:
+    application: "An unexpected error has occurred"
+    access_denied: "You do not have the required permission to access this page"
+    not_found: "You appear to be lost"
+
+  navigation:
+    sign_in: "sign in"
+    sign_out: "sign out"
+      
+    home: "Home"
+    about: "About"
+    contact: "Contact"  
+      
+    dashboard: "Dashboard"
+    staff: "Staff"
+    administration: "Administration"
+    
+    recent_staff: "Recent Staff"
+    current_staff: "Current Staff"
+    terminated: "Terminated"
+    register_staff: "Register New Staff"
+    select_staff: "Select Staff &uarr;"
+    staff_info: "Staff Information"
+    employment: "Employment Details"
+    permissions: "Permissions"
+    photos: "Photographs"
+    reset_password: "Reset Password"
+    lock: "Lock Staff"
+    unlock: "Unlock Staff"
+    upload_photo: "Upload Photo"
+    terminate: "Terminate Employment"
+    archive: "Archive Staff"
+    
+    organisations: "Organisation List"
+    new_organisation: "New Organisation"
+    select_organisation: "Select Organisation &uarr;"
+    org_info: "Organisation Information"
+    security: "Security Manager"
+    locations: "Locations"
+    add_role: "Add Role"
+    add_location: "Setup Location"
+      
+    password: "Change Password"
+    settings: "Settings"
+    profile: "Profile"
+
+    edit: "edit"
+
+  formtastic:
+    titles:
+      employment: "Employment"
+      contacts: "Contacts"
+      address: "Address"
+      personal: "Personal Details"
+      
+  activerecord:
+    attributes:
+      person:
+        first_name: "First name"
+        last_name: "Last name"
+        known_as: "Known as"
+        gender: "Gender"
+        dob: "Date of birth"
+        marital: "Marital status"
+        phone_home: "Home phone"
+        phone_mobile: "Mobile"
+        phone_work: "Work phone"
+        address_line_1: "House number and street"
+        address_locality: "Town or city"
+        address_area: "County"
+        address_country: "Country"
+        address_postcode: "Postcode"
+      
+      user:
+        email: "Email address"
+      
+      staff:
+        job_title: "Job title"
+        nino: "NI number"
+        group: "Location"
+      
+      photo:
+        image: "Select image"
+      
+      group:
+        name: "Name"
+        code: "Code"
+        address_line_1: "House number and street"
+        address_locality: "Town or city"
+        address_area: "County"
+        address_country: "Country"
+        address_postcode: "Postcode"
+
+  search:
+    index:
+      results: "Search Results"
+
+  people:
+    recent: 
+      no_recent: "No recent #{name}"
+      
+  photos:
+    index:
+      error: "There are no uploaded photos"
+
+    create:
+      success: "The photo has been successfully uploaded"
+      error: "There was a problem uploading the photo"
+        
+    default:
+      success: "The profile photo has been changed"
+        
+    destroy:
+      success: "The photo has been deleted"
+      error: "There was a problem deleting the photo"
+      
+  staff:
+    index:
+      title: "Current Staff"
+      
+    show:
+      save: "Save"
+      
+    recent:
+      title: "Recent Staff"
+      
+    new:
+      title: "Register Staff"
+      save: "Register Staff"
+    
+    create:
+      success: "%{name} has been successfully registered"
+      error: "There was an problem during registration"
+      
+    employment:
+      save: "Save"
+      
+    save:
+      success: "The staff information has been saved"
+      error: "There was a problem saving the information"
+      
+    terminate:
+      save: "Terminate"
+      
+    save_terminate:
+      success: "%{name} has been terminated"
+      error: "There was a problem terminating the staff member"
+    
+    reset_password:
+      success: "The password has been changed"
+    
+    archive:
+      success: "%{name} has been archived"
+      error: "There was a problem archiving %{name}"
+    
+    lock:
+      success: "The account has been locked %{name}"
+      
+    unlock:
+      success: "The account has been unlocked %{name}"
+
+  home:
+    index:
+      name: "Home"
+  
+  user:
+    profile:
+      save: "Save"
+    
+    settings:
+      save: "Save Settings"
+      location: "Set location"
+    
+    password:
+      save: "Change"
+      message: "Changing..."
+      existing: "Enter your existing password"
+      password: "Enter your new password"
+      confirmation: "Confirm your new password"
+
+    save:
+      success: "Your profile has been saved"
+      error: "There was a problem updating your profile"
+        
+    save_settings:
+      success: "Your settings have been saved"
+      
+    change_password:
+      confirm: "Please confirm your new password"
+      success: "Your password has been changed"
+      error: "Please enter your existing password correctly"
+
+  sessions:
+    new:
+      code: "Organisation code"
+      email: "Email address or username"
+      password: "Password"
+      remember_me: " Remember me?"
+      save: "Sign In"
+      message: "Signing in..."
+        
+    create:
+      password: "Your password has expired, please change it now"
+      success: "You have been successfully signed in"
+      error: "Please enter valid credentials"
+      
+    destroy:
+      success: "You have been successfully signed out"
+
+  roles:
+    create:
+      success: "Permissions have been saved"
+      error: "There was a problem saving permissions"
+      
+  organisations:
+    index:
+      title: "Organisations"
+    
+    new:
+      save: "Setup"
+      
+    create:
+      success: "The organisation has been successfully setup"
+      error: "There was a problem during organisation setup"
+     
+    update:
+      success: "The information has been saved"
+      error: "There was a problem saving the organisation information"
+     
+  permissions:
+    index:
+      error: "There are no roles defined"
+        
+    create:
+      success: "The role has been added"
+      error: "There was a problem adding the role"
+        
+    update:
+      success: "The information has been saved"
+      error: "There was a problem saving the information"
+        
+  locations:
+    index:
+      error: "There are no locations"
+    
+    new:
+      save: "Setup Location"
+    
+    create:
+      success: "The location has been added"
+      error: "There was a problem adding the location"
+      
+    edit:
+      save: "Setup Location"
+      
+    update:
+      success: "The location has been saved"
+      error: "There was a problem updating the location"

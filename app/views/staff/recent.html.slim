@@ -1,0 +1,7 @@
+= content_for :sidebar do
+	=title :title
+
+== render :partial => "links"
+	
+== render :partial => "search/person", :collection => recents
+	

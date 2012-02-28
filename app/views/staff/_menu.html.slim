@@ -1,0 +1,8 @@
+header
+	== render :partial => "staff/pages"
+	== render :partial => "staff/actions"
+
+	.root
+		nav.staff
+			=link :select_staff, staff_index_path, Staff, :read, false
+	

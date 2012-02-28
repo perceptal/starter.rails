@@ -1,0 +1,10 @@
+nav.actions
+	a title=t(:action) data-tooltip-position="top"
+	ul data-area="staff"
+		=menu :reset_password, password_staff_path(staff), staff, :update, 'staff', 'password'
+		=menu :unlock, unlock_staff_path(staff), staff, :update, 'staff', 'unlock', 'put' if staff.user.is_locked
+		=menu :lock, lock_staff_path(staff), staff, :update, 'staff', 'lock', 'put' if !staff.user.is_locked
+		=menu :upload_photo, new_staff_photo_path(staff), staff, :update, 'photos', 'new'
+		=menu :terminate, terminate_staff_path(staff), staff, :destroy, 'staff', 'terminate' if staff.reason_for_leaving.nil?
+		=menu :archive, staff_path(staff), staff, :destroy, 'staff', 'destroy', 'delete' if current_user.is_support 
+

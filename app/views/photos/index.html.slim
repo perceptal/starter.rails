@@ -1,0 +1,7 @@
+= content_for :sidebar do
+	== render :partial => "sidebar/person", :locals => { :person => person }
+	
+== render :partial => "#{owner.pluralize}/menu"
+
+== render :partial => "photo", :collection => person.photos
+== render :partial => "modal"

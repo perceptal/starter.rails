@@ -1,0 +1,6 @@
+= content_for :sidebar do
+	== render :partial => "sidebar/organisation", :locals => { :organisation => group }
+	
+== render :partial => "admin/organisations/menu"
+
+== render :partial => "location", :collection => locations

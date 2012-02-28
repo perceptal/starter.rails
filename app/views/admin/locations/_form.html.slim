@@ -1,0 +1,14 @@
+= f.inputs do
+	= f.input :name
+	== render :partial => "form/address", :locals => { :f => f }
+	fieldset
+		= label_tag :organisation do	
+			= check_box_tag :organisation 
+			span Use Organisation Address?
+	= submit f, :save, group, :update
+	= f.fields_for group do |g|
+		= g.input :address_line_1, :as => :hidden
+		= g.input :address_locality, :as => :hidden
+		= g.input :address_area, :as => :hidden
+		= g.input :address_country, :as => :hidden
+		= g.input :address_postcode, :as => :hidden

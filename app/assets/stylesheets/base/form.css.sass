@@ -1,0 +1,348 @@
+@import "compass"
+@import "compass/css3/border-radius"
+@import "compass/css3/box-shadow"
+@import "compass/css3/box-sizing"
+@import "compass/css3/opacity"
+
+=shadow($val)
+	+box-shadow(rgba(0, 0, 0, $val) 0 0 1px, rgba(0, 0, 0, $val) 0 1px 1px)
+
+form.formtastic 
+	margin: 0
+	
+	fieldset
+		margin: 0
+		legend
+			span
+				color: #006
+				font-size: 16px
+	
+	ol, ul
+		list-style: none
+		margin: 0
+		
+		li
+			margin: 0
+			margin-bottom: 10px
+			
+	input
+		margin: 0
+						
+	li.required
+		input, textarea
+			background: #fff url('required.png') no-repeat right 4px	
+
+	li.choice 
+		label
+			span.text
+				font-size: 15px
+				padding-left: 10px
+	
+	li.type_ahead
+		list-style: none
+		
+	div
+		margin: 0
+		
+	li.error
+		label
+			color: #c00
+		
+	.inline-errors
+		margin: 0
+		padding-left: 5px 
+		font-size: 13px
+		color: #c00
+
+form
+	input[type="submit"]
+		margin-top: 10px
+
+
+a.button,
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"]
+	outline: none
+
+a.button:focus,
+button:focus,
+input[type="submit"]:focus,
+input[type="reset"]:focus,
+input[type="button"]:focus
+	+shadow(0.3)
+
+a.button[disabled],
+button[disabled],
+input[type="submit"][disabled],
+input[type="reset"][disabled],
+input[type="button"][disabled]
+	+opacity(0.5)
+
+a.button.small,
+button.small,
+input[type="submit"].small,
+input[type="reset"].small,
+input[type="button"].small
+	font-size: 0.9em
+	padding: 3px 6px
+
+/* Text area */
+
+.grippie
+	+border-bottom-radius(2px)
+	background: #eee url('grippie.png') no-repeat scroll center 2px
+	border-color: #ccc
+	border-style: solid
+	border-width: 0 1px 1px
+	cursor: s-resize
+	height: 9px
+	overflow: hidden
+
+textarea, textarea:focus
+	+border-top-radius(2px)
+	display: block
+	margin-bottom: 0
+	border-bottom: 0 !important
+	width: 95%
+	resize: vertical
+	
+/* Select */
+
+select
+	visibility: hidden
+
+.sb-custom
+	cursor: pointer
+	display: inline
+	position: relative
+	width: 100%
+
+	input[type="text"]
+		+box-sizing(border-box)
+		background: #fff url('select.png') no-repeat 99% 50% !important
+		left: 0
+		top: 0
+		position: relative
+		width: 228px !important
+		z-index: 0
+		cursor: pointer
+	input[type="text"]:hover
+		background: #fff url('select_on.png') no-repeat 99% 50% !important
+	input.typeahead, input.typeahead:hover
+		background: #fff url('typeahead.png') no-repeat 97% 50% !important
+	input.searching, input.search:hover
+		background: #fff url('loading.gif') no-repeat 98% 50% !important
+	ul
+		+box-sizing(border-box)
+		+border-bottom-radius(3px)
+		top: -2px
+		left: 0
+		max-height: 190px
+		overflow-y: auto
+		margin: 0
+		padding: 0
+		width: 228px
+		border: 1px solid #aaa
+		border-top: 0
+		position: absolute
+		display: none
+		background: #fff
+		font-size: 14px !important
+		z-index: 1
+		li
+			line-height: 13px
+			font-size: 13px
+			padding: 3px
+			margin-bottom: 0 !important
+			a 
+				+border-radius(2px)
+				display: block
+				text-decoration: none
+				padding: 6px
+				color: #444
+			a:hover
+				background-color: #ffa824
+				color: #fff
+		li.selected 
+			a
+				background: #ccc
+				color: #222
+			a:hover
+				background-color: #ffa824
+				color: #fff
+
+.sb-custom.time
+	input[type="text"]
+		width: 140px !important	
+	ul
+		width: 140px !important		
+
+.sb-custom.assigned
+	input[type="text"]
+		width: 200px !important	
+	ul
+		width: 200px !important
+
+.sb-custom.inline
+	input[type="text"]
+		margin: 0	!important
+		left: 3px
+		padding: 3px 5px
+		font-size: 11px
+		width: 120px !important
+		color: #333
+		border-color: #aaa
+		
+	ul
+		left: 3px
+		width: 120px
+		font-size: 11px !important
+		li
+			line-height: 11px
+			font-size: 11px
+			padding: 3px
+			a
+				padding: 3px
+				color: #444
+			a:hover
+				background-color: #ffa824
+				color: #fff
+		li.selected 
+			a
+				background: #ccc
+				color: #222
+			a:hover
+				background-color: #ffa824
+				color: #fff			
+
+/* File upload */
+
+input#upload
+	+border-radius(3px)
+	background-color: #aaa
+	padding: .4em 1.2em
+	border: 1px solid #aaa
+	color: #222
+	font-size: 1.2em
+	cursor: pointer
+	margin: 2em 0
+
+input#upload:hover
+	background: #eee
+	color: #111
+	border-color: #777
+
+.customfile-input
+	+opacity(0)
+	position: absolute
+	height: 100px
+	cursor: pointer
+	background: transparent
+	border: 0
+
+.customfile
+	+border-radius(2px)
+	font: 14px "Lucida Grande", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif
+	width: 300px
+	color: #777
+	cursor: pointer
+	overflow: hidden
+	padding: 3px
+	height: 29px
+	margin: 0
+	border: 1px solid #ccc
+	position: relative
+	
+.customfile-disabled
+	+opacity(0.5)
+	cursor: default
+	
+.customfile-feedback
+	display: block
+	margin: 1px 1px 1px 5px
+	color: #777
+	padding: 6px 0
+	
+.customfile-feedback-populated
+	color: #777
+	padding-left: 26px
+	
+.customfile-button
+	+border-radius(3px)
+	color: #fff
+	float: right
+	text-align: center
+	text-decoration: none
+	background: #eee
+	background: -moz-linear-gradient(top, rgba(255,255,255,.2) 0%, rgba(0,0,0,.2) 100%)
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,.2)), color-stop(100%,rgba(0,0,0,.2)))
+	background: -webkit-linear-gradient(top, rgba(255,255,255,.2) 0%,rgba(0,0,0,.2) 100%)
+	background: -o-linear-gradient(top, rgba(255,255,255,.2) 0%,rgba(0,0,0,.2) 100%)
+	background: -ms-linear-gradient(top, rgba(255,255,255,.2) 0%,rgba(0,0,0,.2) 100%)
+	background: linear-gradient(top, rgba(255,255,255,.2) 0%,rgba(0,0,0,.2) 100%)
+	border: 1px solid #aaa
+	border-top: 1px solid #ccc
+	border-left: 1px solid #ccc
+	padding: 3px 6px
+	color: #444
+	display: inline-block
+	font-size: 14px
+	font-weight: normal
+	text-decoration: none
+	cursor: pointer
+	line-height: 21px
+	font-family: "Lucida Grande", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif
+	
+.customfile-hover .customfile-button, .customfile-focus .customfile-button
+	color: #222
+	background: #ddd
+	background: -moz-linear-gradient(top, rgba(255,255,255,.3) 0%, rgba(0,0,0,.3) 100%)
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,.3)), color-stop(100%,rgba(0,0,0,.3)))
+	background: -webkit-linear-gradient(top, rgba(255,255,255,.3) 0%,rgba(0,0,0,.3) 100%)
+	background: -o-linear-gradient(top, rgba(255,255,255,.3) 0%,rgba(0,0,0,.3) 100%)
+	background: -ms-linear-gradient(top, rgba(255,255,255,.3) 0%,rgba(0,0,0,.3) 100%)
+	background: linear-gradient(top, rgba(255,255,255,.3) 0%,rgba(0,0,0,.3) 100%)
+	border: 1px solid #888
+	border-top: 1px solid #aaa
+	border-left: 1px solid #aaa
+	
+.customfile-focus .customfile-button 
+	outline: 1px dotted #ccc
+
+.customfile-ext-jpg, .customfile-ext-gif, .customfile-ext-png, .customfile-ext-jpeg, .customfile-ext-bmp
+	+opacity(0.8)
+	background: transparent url('image.png') no-repeat left 2px
+.customfile-ext-mp3, .customfile-ext-mp4, .customfile-ext-mov, .customfile-ext-swf, .customfile-ext-wav, .customfile-ext-m4v
+	+opacity(0.8)
+	background: transparent url('media.png') no-repeat left 2px
+.customfile-ext-zip, .customfile-ext-tar, .customfile-ext-sit
+	+opacity(0.8)
+	background: transparent url('zip.png') no-repeat left 2px
+
+/* Scrollbars */
+
+ul::-webkit-scrollbar, textarea::-webkit-scrollbar
+	width: 10px
+	height: 10px
+	
+textarea::-webkit-scrollbar
+	width: 12px
+			
+ul::-webkit-scrollbar-button:start:decrement,
+ul::-webkit-scrollbar-button:end:increment,
+textarea::-webkit-scrollbar-button:start:decrement,
+textarea::-webkit-scrollbar-button:end:increment
+	height: 0
+	display: block
+
+ul::-webkit-scrollbar-track-piece, textarea::-webkit-scrollbar-track-piece
+	background-color: #fff
+	
+ul::-webkit-scrollbar-thumb:vertical, textarea::-webkit-scrollbar-thumb:vertical
+	background-color: #ddd
+	border: 3px solid #fff
+	border-left: 0
+	height: 50px
+	width: 50px

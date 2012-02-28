@@ -1,0 +1,13 @@
+= content_for :sidebar do
+	== render :partial => "sidebar/user"
+
+== render :partial => "links"
+
+= form_tag settings_path, :class => "formtastic" do
+	fieldset
+		ol
+			li
+				= label_tag :location, t(:location, :scope => "user.settings")
+				= select_tag(:location, options_for_select(staff.groups.map {|g| [g.name, g.id]}, staff.location.id))
+			li
+				= button :save

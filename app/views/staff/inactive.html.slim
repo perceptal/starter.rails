@@ -1,0 +1,7 @@
+= content_for :sidebar do
+	=title "Terminated Staff"
+
+== render :partial => "links"
+	
+== render :partial => "search/person", :collection => inactive
+== render :partial => "shared/paging", :locals => { :total => inactive_total }

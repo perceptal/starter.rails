@@ -1,0 +1,10 @@
+= content_for :sidebar do
+	== render :partial => "sidebar/organisation", :locals => { :organisation => group }
+	
+== render :partial => "menu"
+	
+= semantic_form_for group, :url => admin_organisation_path(group), :validate => true do |f|
+	= f.inputs :name, :code
+	== render :partial => "form/address", :locals => { :f => f }
+	= f.submit raw "Save &rarr;"
+

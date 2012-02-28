@@ -1,0 +1,8 @@
+nav.pages
+	a title=t(:page) data-tooltip-position="top"
+	ul data-area="staff"
+		=menu :staff_info, staff_path(staff), staff, :read, 'staff', 'show'
+		=menu :employment, employment_staff_path(staff), staff, :read, 'staff', 'employment'
+		=menu :permissions, staff_roles_path(staff), staff, :read, 'roles'
+		=menu :photos, staff_photos_path(staff), staff, :read, 'photos'
+

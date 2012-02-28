@@ -1,0 +1,4 @@
+- if person.photos.is_default.empty?
+	= image_tag "noprofile.png"
+- else
+	= image_tag person.profile_photo.image.url(:thumbnail)

@@ -1,0 +1,10 @@
+= content_for :sidebar do
+	== render :partial => "sidebar/person", :locals => { :person => staff }
+	
+== render :partial => "staff/menu"
+
+= semantic_form_for staff.user, :url => staff_roles_path(staff), :method => "post", :validate => true do |f|
+	= f.inputs do
+		= f.input :roles, :as => :check_boxes, :collection => roles, :label => false, :member_label => Proc.new { |r| role_label r } 
+	= submit f, :save, staff, :update
+	

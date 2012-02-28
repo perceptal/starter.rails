@@ -1,0 +1,7 @@
+= content_for :sidebar do
+	=title :results
+	=for_query query
+
+== render :partial => "paging"
+== render :partial => "person", :collection => people	
+== render :partial => "paging"

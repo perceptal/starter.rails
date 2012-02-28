@@ -1,0 +1,25 @@
+defaults: &defaults
+  allow_dynamic_fields: true
+  parameterize_keys: true
+  persist_in_safe_mode: true
+  raise_not_found_error: true
+  reconnect_time: 3
+  use_object_ids: true
+  identity_map_enabled: true
+  
+development:
+  <<: *defaults
+  host: localhost
+  database: starter_development
+
+test:
+  <<: *defaults
+  host: localhost
+  database: starter_test
+
+staging:
+  uri: <%= ENV['MONGOHQ_URL'] %>
+
+# set these environment variables on your prod server
+production:
+  uri: <%= ENV['MONGOHQ_URL'] %>

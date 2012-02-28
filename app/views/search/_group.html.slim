@@ -1,0 +1,9 @@
+article.search
+	= image_tag "group.png"
+	.info
+		span.resource data-resource="organisations"
+			strong= group.name
+		.content
+			= group.code
+	.open
+		= link_to raw(t(:open) + "&rarr;"), admin_organisation_path(group)

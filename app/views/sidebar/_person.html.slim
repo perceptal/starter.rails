@@ -1,0 +1,6 @@
+=title person.full_name
+- if person.photos.is_default.any?
+	.image
+		= image_tag person.profile_photo.image.url(:large), :class => "scale-with-grid"
+		
+== render :partial => "sidebar/" + person.type.downcase, :locals => { :person => person }

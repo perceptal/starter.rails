@@ -1,0 +1,9 @@
+aside#sidebar.three.columns.alpha.shift-right
+	= yield :sidebar	
+
+section#main.eleven.columns.shift-left
+	= yield
+	
+== render :partial => "shared/response"
+== render :partial => "shared/message"
+== render :partial => "shared/confirm"

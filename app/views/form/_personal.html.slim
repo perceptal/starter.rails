@@ -1,0 +1,8 @@
+= f.inputs :personal do
+	= f.input :first_name
+	= f.input :last_name,
+	= f.input :known_as
+	= f.input :gender, :as => :select, :collection => Person.genders
+	= f.input :dob, :as => :date_picker
+	= f.input :title, :as => :combo, :collection => person.titles
+	= f.input :marital_status, :as => :combo, :collection => person.maritals

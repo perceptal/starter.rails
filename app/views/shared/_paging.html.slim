@@ -1,0 +1,12 @@
+- if total > limit
+	.paging	
+		div class=controller_name
+			= t(:showing) + " #{skip + 1} " + t(:to) + " "
+			- if skip + limit > total
+				= total
+			- else
+				= skip + limit
+			= " " + t(:of) + " #{total}"
+			= link_to_if page > 1, raw(" &larr;" + t(:previous)), :controller => controller_name, :action => action_name, :p => page-1
+			| &nbsp;|&nbsp;
+			= link_to_if skip+limit < total, raw(t(:next) + "&rarr;"), :controller => controller_name, :action => action_name, :p => page+1

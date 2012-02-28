@@ -1,0 +1,474 @@
+@import "compass"
+@import "compass/css3/border-radius"
+@import "compass/css3/box-shadow"
+@import "compass/css3/box-sizing"
+@import "compass/css3/opacity"
+
+=shadow($val)
+	+box-shadow(rgba(0, 0, 0, $val) 0 0 1px, rgba(0, 0, 0, $val) 0 1px 1px)
+
+=truncate
+	height: 20px
+	overflow: hidden
+	text-overflow: ellipsis
+	white-space: nowrap
+	width: 100%
+
+html
+	overflow-y: auto
+	background-color: transparent
+	
+a, a:visited
+	color: #600
+	text-decoration: none
+a:hover
+	color: #900
+a.disabled
+	color: #999
+	cursor: text
+
+.smaller
+	font-size: 0.9em
+
+em
+	color: #900
+
+.printer
+	display: none
+
+/* Search results */
+
+article.search, article.list
+	+border-radius(3px)
+	+box-sizing(border-box)
+	+opacity(0.7)
+	position: relative
+	padding-bottom: 5px
+	border: 1px solid transparent
+	cursor: pointer
+	color: #000
+	div.info
+		padding: 0 60px
+	div.no-photo
+		padding-left: 0
+	img
+		+border-radius(6px)
+		border-color: transparent
+		position: absolute
+		top: 5px
+		left: 5px
+	a
+		color: #333
+		text-decoration: none
+	strong
+		color: #006
+		padding-right: 10px
+		font-weight: normal
+	em
+		background-color: #ffc
+		border: 1px solid #c96
+	span
+		margin-right: 10px
+	span.info
+		color: #c00
+	.text
+		font-size: 0.9em
+	.open
+		display: none
+		position: absolute
+		padding: 2px
+		right: 10px
+		top: 0
+		bottom: 0
+		margin: auto
+		height: 12px
+		font-size: 12px
+		line-height: 12px
+		
+article.search:hover, article.list:hover, article.list.active
+	+opacity(1)
+	border: 1px solid #c96
+	background-color: #ffe
+	z-index: 99
+	em
+		border-color: #ffe
+		background-color: #ffe
+	a
+		color: #900
+	.open
+		display: inline
+
+/* Inline editing */
+
+article.list
+	padding: 5px
+	.view
+		display: block
+		padding: 5px	
+		.columns, .column
+			margin: 0	
+		.small
+			font-size: 0.8em
+			padding-left: 10px
+	.edit
+		display: none
+		padding-top: 1px
+		.pad
+			padding: 4px 5px 5px 5px
+		form
+			display: inline
+			padding: 0
+			margin: 0
+				
+		fieldset
+			display: inline
+			ol.choices-group
+				li
+					float: left
+				label, legend
+					display: inline
+			ol
+				display: inline
+				li
+					margin: 0 10px 0 0
+				li.error
+					input[type="text"]
+						border-color: #c00
+						background-color: #fbeff2
+				label
+					p.inline-errors
+						display: none
+		input
+			background-color: #fff
+			padding: 5px 3px
+		select
+			margin: 0
+			padding: 0
+			color: #000
+			font-size: 0.8em
+			width: 120px
+		input[type="submit"]
+			font-size: 0.9em
+			padding: 3px 6px
+			margin-top: 1px
+		.columns, .column
+			input
+				margin-bottom: 5px
+		
+article.list.active
+	z-index: 101
+	
+	.edit
+		display: block
+	.view
+		display: none
+
+/* Paging */
+
+.paging
+	font-size: 0.9em
+	margin: 10px
+	color: #666
+	a
+		color: #006
+		text-decoration: none
+	a:hover
+		color: #900
+
+/* Photos */
+
+/* img:not([width]):not([height])
+	border: 2px solid red !important */
+
+.image
+	+box-sizing(border-box)
+	+border-radius(5px)
+	+shadow(0.2)
+	background: #fff
+	padding: 4px 4px 0 4px
+	margin: 0			
+	margin-top: 10px
+	
+article.photo
+	display: inline-block
+	margin: 0
+	padding: 0
+	cursor: pointer
+	
+	.image
+		+border-radius(2px)
+		+opacity(0.8)
+		position: relative
+		display: inline-block
+		margin: 0
+		
+		a
+			+opacity(0)
+			position: absolute
+			width: 16px
+			text-decoration: none
+		
+		a.delete
+			background: transparent url('error.png') no-repeat 0 0
+			top: 10px
+			right: 10px
+
+		a.default
+			background: transparent url('user.png') no-repeat 0 0
+			top: 10px
+			left: 10px
+	
+	.image:hover
+		+opacity(1)
+		a
+			+opacity(0.5)
+		a:hover
+			+opacity(1)
+
+img
+	+box-sizing(border-box)
+	+border-radius(3px)
+	border: 1px solid #eee
+	
+img.bare
+	border: none
+	
+/* Tooltip */
+
+#tooltip_arrow, #tooltip_arrow_inner
+	position: absolute
+	border: 6px solid transparent
+	height: 0
+	width: 0
+			
+#tooltip_holder
+	display: none
+	position: absolute
+	top: 0
+	left: 0
+	z-index: 99999
+
+#tooltip_holder.tip_top 
+	padding-bottom: 5px
+		
+	#tooltip_arrow 
+		border-top-color: #fff
+		border-top-color: rgba(255, 255, 255, 0.2)
+		
+	#tooltip_arrow_inner
+		margin-top: -7px
+		margin-left: -6px
+		border-top-color: #000
+		border-top-color: rgba(0, 0, 0, 0.1)
+				
+#tooltip_holder.tip_bottom
+	padding-top: 5px
+		
+	#tooltip_arrow
+		border-bottom-color: #fff
+		border-bottom-color: rgba(255, 255, 255, 0.2)
+			
+	#tooltip_arrow_inner 
+		margin-top: -5px
+		margin-left: -6px
+		border-bottom-color: #000
+		border-bottom-color: rgba(0, 0, 0, 0.1)
+
+#tooltip_holder.tip_right
+	padding-left: 5px
+		
+	#tooltip_arrow
+		border-right-color: #fff
+		border-right-color: rgba(255, 255, 255, 0.2)
+			
+	#tooltip_arrow_inner 
+		margin-top: -6px
+		margin-left: -5px
+		border-right-color: #000
+		border-right-color: rgba(0, 0, 0, 0.1)
+
+#tooltip_holder.tip_left
+	padding-right: 5px
+		
+	#tooltip_arrow
+		border-left-color: #fff
+		border-left-color: rgba(255, 255, 255, 0.2)
+			
+	#tooltip_arrow_inner
+		margin-top: -6px
+		margin-left: -7px
+		border-left-color: #000
+		border-left-color: rgba(0, 0, 0, 0.1)
+
+#tooltip_content
+	+border-radius(4px)
+	+shadow(0.3)
+	+opacity(0.9)
+	font-size: 11px
+	color: #000
+	padding: 0 4px
+	background-color: #ffc
+
+/* Records */
+
+.filter
+	position: relative
+	input
+		margin: 0
+
+	.links
+		position: absolute
+		right: 0
+		bottom: 0
+		
+		a.show_all, a.hide_all
+			display: none
+		a.print
+			margin-right: 1em
+				
+article.item
+	+border-radius(3px)
+	+box-sizing(border-box)
+	position: relative
+	margin-bottom: 5px
+	border: 1px solid transparent
+	
+	.heading
+		+opacity(0.7)
+		position: relative
+		color: #000
+	a
+		font-size: 12px
+		padding-left: 10px
+	
+	strong
+		color: #000
+		font-weight: normal
+	
+	.locked
+		background: transparent url('lock.png') no-repeat top right
+		padding-right: 20px
+	
+	.description, .title
+		strong
+			font-weight: bold
+		em
+			color: #900
+	.title
+		color: #006
+	.description
+		font-size: 0.9em
+		strong
+			color: #060
+
+	ul.links
+		position: absolute
+		display: inline
+		top: 2px
+		li
+			float: left
+			padding-right: 10px
+	
+	.detail
+		+box-sizing(border-box)
+		+opacity(1)
+		padding-top: 5px
+		padding-bottom: 0
+		font-size: 0.9em
+		display: none
+		
+		.cancelled
+			+opacity(0.4)
+		
+		h4
+			margin-top: 10px
+			padding-left: 10px
+			color: #006
+		
+	.show, .hide, .links a
+		display: none
+	.show, .hide
+		float: right
+		padding: 2px
+	.cancel
+		padding-left: 0
+	.more
+		display: none
+		padding-left: 0
+
+article.item.open
+	margin-bottom: 10px
+
+article.item:not(.disabled):hover, article.item.open
+	border: 1px solid #c96
+	background-color: #ffe
+	.heading
+		+opacity(1)
+
+article.item.disabled
+	.heading
+		color: #777
+		
+/* Table */
+
+.table
+	+border-radius(3px)
+	padding: 2px 0
+	font-size: 13px
+	
+	a.edit, a.destroy, a.new, a.revert, a.history, a.evaluate, a.review, a.open
+		display: none
+		right: 0
+	a.index, a.revert
+		padding-left: 0
+		font-size: 13px
+		
+	input[type="text"]
+		margin: 2px 0
+		padding: 3px
+		font-size: 0.9em
+		width: 95%
+		background: #fff
+		
+	.small
+		font-size: 13px
+		
+.table:hover
+	background-color: #ffc
+	color: #000
+	
+.table.disabled
+	+opacity(0.5)
+	
+.table.disabled:hover
+	background-color: #fff
+	color: #444
+	
+.header
+	border: 1px solid transparent
+	font-size: 12px
+	color: #006
+	
+.report
+	+truncate
+	padding-left: 21px
+	font-size: 12px
+	
+.truncate
+	+truncate
+	
+.shift
+	padding-left: 20px
+	
+.tag
+	+border-radius(3px)
+	font-size: 0.8em
+	border: 1px solid #ccc
+	background: #eee
+	padding: 2px 3px
+	margin-left: 6px
+
+.true 
+	background: transparent url('true.png') no-repeat 0 2px 
+.false 
+	background: transparent url('false.png') no-repeat 0 2px

@@ -1,0 +1,157 @@
+@import "compass"
+@import "compass/css3/border-radius"
+
+.datepicker 
+	.date_selector * 
+		width: auto
+		height: auto
+		border: none
+		background: none
+		margin: 0
+		padding: 0
+		text-align: left
+		text-decoration: none
+		font-size: 12px
+		
+	input[type="text"]
+		width: 120px
+		background: #fff url('date.png') no-repeat 94% 50% !important
+		cursor: pointer
+	input[type="text"]:hover
+		background: #fff url('date_on.png') no-repeat 94% 50% !important
+		
+	.date_selector 
+		+border-bottom-radius(4px)
+		background: #fff
+		border: 1px solid #bbb
+		padding: 5px
+		margin: -1px 0 0 0
+		position: absolute
+		z-index: 100000
+		display: none
+		width: 210px
+
+		table
+			width: 210px
+			margin-left: 3px
+			margin: 0 auto
+			border-spacing: 1px
+			clear: both
+			th, td 
+				text-align: center
+				color: #000				
+			th
+				padding-top: 5px
+			th.week_label
+				font-size: 0.8em
+				width: 25px
+			td 
+				border: 1px solid #ccc
+				line-height: 2em
+				text-align: center
+				white-space: nowrap
+				color: #003c78
+				background: #fff
+			td.unselected_month 
+				color: #ccc
+			td.selectable_day, tr.selectable_week td 
+				cursor: pointer
+				background: #ffe
+				border: 1px solid #aaa
+				color: #333
+			td.selected, tr.selected td
+				background: #eee
+				font-weight: bold
+				color: #900
+			tr.selectable_week.hover td, td.selectable_day.hover 
+				background: #ffa824
+				color: #fff								
+			td.today 
+				background: #eee
+				color: #333																
+			
+		.nav 
+			width: 17.5em
+				
+		.month_nav, .year_nav 
+			margin: 0 0 3px 0
+			padding: 0
+			display: block
+			position: relative
+			text-align: center
+				
+		.month_nav 
+			float: left
+			width: 56%
+					
+			select 
+				width: 75px
+				margin: 0 auto
+				border: 1px solid #ccc
+				position: relative
+				top: 1px
+						
+		.year_nav 
+			float: right
+			width: 37%
+			position: relative
+					
+			.year_input 
+				background: #fff !important
+				text-align: center
+				width: 36px
+				border: 1px solid #ccc
+				position: relative
+				top: 2px
+				margin-left: 20px
+			
+		.month_name, .year_name 
+			line-height: 20px
+			color: #900
+					
+		.button 
+			display: block
+			position: absolute
+			top: 0
+			width: 18px
+			height: 18px
+			line-height: 17px
+			color: #333
+			text-align: center
+			font-size: 120%
+			overflow: hidden
+			border: 1px solid #f2f2f2
+			cursor: pointer	
+			
+		.button:hover, .button.hover 
+			background: none
+			color: #333
+			cursor: pointer
+			border-color: #ccc
+														
+		.prev 
+			left: 0
+
+		.next 
+			right: 0	
+	
+	.date_selector_ieframe 
+		position: absolute
+		z-index: 99999
+		display: none
+
+	.error_msg
+		display: none
+		text-align: center
+		font-size: 0.8em
+		color: #666 
+
+	.week_num, .hover .week_num, .selected .week_num
+		color: #333 !important
+		vertical-align: bottom !important
+		text-align: right
+		border: none !important
+		font-size: 0.8em
+		background: #fcfcfc !important
+		padding-right: 4px
+

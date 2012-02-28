@@ -1,0 +1,8 @@
+= f.inputs :address do
+	= f.input :address_line_1
+	= f.input :address_locality
+	= f.input :address_area, :as => :static_type_ahead, :url => "/lookup/counties.json"
+	= f.input :address_country, :as => :static_type_ahead, :url => "/lookup/countries.json"
+	= f.input :address_postcode
+	
+	

@@ -1,0 +1,8 @@
+header
+	.root
+		nav.user
+			=link :dashboard, dashboard_path, User, :read, 'user', 'dashboard'
+			=link :profile, profile_path, User, :read, 'user', 'profile'
+			=link :password, password_path, User, :read, 'user', 'password'
+			=link :settings, settings_path, User, :read, 'user', 'settings'
+			

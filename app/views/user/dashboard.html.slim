@@ -1,0 +1,7 @@
+= content_for :sidebar do
+	== render :partial => "sidebar/user"
+
+== render :partial => "links"
+		
+== render :partial => "search/person", :collection => assigned
+== render :partial => "shared/empty", :locals => { :count => assigned.count, :message => "No assigned" }

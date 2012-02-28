@@ -1,0 +1,11 @@
+.idea
+.bundle
+db/*.sqlite3
+log/*.log
+log/*.lck
+solr/
+tmp/
+ssl/
+.sass-cache/
+config/s3.yml
+public/assets/

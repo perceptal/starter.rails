@@ -1,0 +1,13 @@
+= content_for :sidebar do
+	== render :partial => "sidebar/person", :locals => { :person => staff }
+	
+== render :partial => "menu"
+	
+= semantic_form_for staff, :url => employment_staff_path(staff), :validate => true do |f|
+	== render :partial => "form/contact", :locals => { :f => f }
+	= f.inputs :employment do
+		= f.input :job_title, :input_html => { :style => "width: 300px" }
+		= f.input :nino
+		= f.input :group, :as => :select, :collection => current_user.person.groups
+		= submit f, :save, staff, :update
+

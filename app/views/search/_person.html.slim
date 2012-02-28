@@ -1,0 +1,19 @@
+article.search
+	== render :partial => "search/photo", :locals => { :person => person }
+	.info
+		span.resource data-resource=person.resource data-area=person.area
+			strong= person.full_name
+			span
+				- if person.type == "Staff"
+					span.info= person.job_title
+				- if person.type == "Staff" && !person.left_on.nil?
+					span.info= t(:terminated)
+		.content
+			- if !person.phone.nil? && !person.phone.empty?
+				span.info= person.phone
+			- if person.user
+				a href=mailto(person.user.email)
+					= person.user.email
+	.open
+		a href=person.uri
+			= raw(t(:open) + "&rarr;");

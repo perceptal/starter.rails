@@ -1,0 +1,23 @@
+= content_for :sidebar do
+	=title "Sign In"
+
+= form_tag sign_in_path, :class => "post" do
+	- if !domain_specified
+		= label_tag :code, t(:code, :scope => "sessions.new")
+		= text_field_tag :code, params[:code] || code, :class => (!code.nil? ? "" : "focus")
+	- else
+		= hidden_field_tag :code, code
+		
+	= label_tag :email, t(:email, :scope => "sessions.new")
+	= text_field_tag :email, params[:email] || email, :class => (!code.nil? && !email.nil? ? "" : "focus")
+
+	= label_tag :password, t(:password, :scope => "sessions.new")
+	= password_field_tag :password, "", :class => (email.nil? ? "" : "focus")
+
+	fieldset
+		= label_tag :remember_me do	
+			= check_box_tag :remember_me, "", !email.nil?
+			span= t(:remember_me, :scope => "sessions.new")
+	
+	= button :save, :message
+	

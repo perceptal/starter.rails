@@ -1,0 +1,6 @@
+nav.actions
+	a title=t(:action) data-tooltip-position="top"
+	ul data-area="organisations"
+		=menu :add_role, new_admin_organisation_role_path(group), group, :update, 'permissions', 'new'
+		=menu :add_location, new_admin_organisation_location_path(group), group, :update, 'locations', 'new'
+

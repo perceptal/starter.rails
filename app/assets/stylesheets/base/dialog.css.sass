@@ -1,0 +1,130 @@
+@import "compass"
+@import "compass/css3/border-radius"
+@import "compass/css3/box-shadow"
+@import "compass/css3/box-sizing"
+@import "compass/css3/opacity"
+
+=shadow($val)
+	+box-shadow(rgba(0, 0, 0, $val) 0 0 1px, rgba(0, 0, 0, $val) 0 1px 1px)
+
+.message
+	padding: 3px 0 0 26px
+	margin: 0 0 10px 6px
+	
+#dialog, #confirm
+	+border-radius(6px)
+	+shadow(0.3)
+	position: absolute
+	display: none
+	z-index: 999999
+	top: 20%
+	left: 30%
+	background: #eee
+	padding: 20px
+	
+	.message
+		position: relative
+		display: none
+		padding: 4px 10px 4px 26px
+		margin: 0
+
+	a
+		color: #900
+		cursor: pointer
+		text-decoration: none
+		z-index: 999999
+
+	a.close
+		font-size: 0.9em
+		float: right
+
+	a.yes, a.no
+		padding-right: 10px
+			
+	a.no
+		color: #777
+		
+	a.close:hover, a.yes:hover
+		color: #c00
+		
+	a.no:hover
+		color: #000
+	
+	.questions
+		padding-left: 26px
+		
+.message.info
+	background: transparent url('info.png') no-repeat 4px 4px
+	color: #006
+.message.warning
+	background: transparent url('warning.png') no-repeat 4px 4px
+	color: #300
+.message.error
+	background: transparent url('error.png') no-repeat 4px 4px
+	color: #900
+.message.question
+	background: transparent url('question.png') no-repeat 4px 6px
+	color: #006
+.message.loading
+	background: transparent url('loading.gif') no-repeat 4px 4px
+	color: #300
+		
+/* Reveal dialog */
+
+.reveal-modal-bg
+	+opacity(0.15)
+	position: fixed 
+	height: 100%
+	width: 100%
+	background: #000
+	z-index: 100
+	display: none
+	top: 0
+	left: 0 
+
+.reveal-modal
+	+border-radius(5px)
+	+box-shadow(0 0 10px rgba(0, 0, 0, 0.4))
+	visibility: hidden
+	top: 100px
+	left: 50%
+	margin-left: -300px
+	width: 520px
+	background: #eee
+	position: absolute
+	z-index: 101
+	padding: 6px 6px 2px 6px
+	
+.reveal-modal.small
+	width: 200px
+	margin-left: -140px
+.reveal-modal.medium
+	width: 400px
+	margin-left: -240px
+.reveal-modal.large
+	width: 600px
+	margin-left: -340px
+.reveal-modal.xlarge
+	width: 800px
+	margin-left: -440px
+
+.reveal-modal 
+	.close-reveal-modal
+		+text-shadow(0 0 2px #000)
+		font-size: 14px
+		line-height: .5
+		position: absolute
+		top: 18px
+		right: 16px
+		color: #fff
+		cursor: pointer
+		text-decoration: none
+	
+.reveal-modal 
+	.close-reveal-modal:hover
+		+text-shadow(0 0 0 #c00)
+		color: #c00
+
+	img
+		+border-radius(7px)
+		width: 100%

@@ -1,0 +1,11 @@
+= content_for :sidebar do
+	== render :partial => "sidebar/person", :locals => { :person => staff }
+	
+== render :partial => "staff/menu"
+	
+= semantic_form_for staff, :url => terminate_staff_path(staff), :validate => true do |f|
+	= f.inputs do
+		= f.input :reason_for_leaving, :input_html => { :style => "width:420px"}
+		= f.input :left_on, :as => :date_picker
+		= submit f, :save, staff, :update
+		

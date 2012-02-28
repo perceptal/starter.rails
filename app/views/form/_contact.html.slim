@@ -1,0 +1,8 @@
+= f.inputs :contacts do
+	= f.input :phone_home, :as => :string
+	= f.input :phone_mobile, :as => :string
+	= f.input :phone_work, :as => :string
+	= f.inputs :for => :user do |u|
+		= u.input :email, :input_html => { :style => "width: 300px" }
+	
+	

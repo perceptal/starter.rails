@@ -1,0 +1,7 @@
+= content_for :sidebar do
+	== render :partial => "sidebar/organisation", :locals => { :organisation => group }
+	
+== render :partial => "admin/organisations/menu"
+	
+= semantic_form_for location, :url => admin_organisation_locations_path(group), :validate => true do |f|
+	== render :partial => "form", :locals => { :f => f }

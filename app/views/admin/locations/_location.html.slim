@@ -1,0 +1,13 @@
+article.item
+	.heading
+		span= location.name
+		ul.links data-area="organisations"
+			=menu :edit, edit_admin_organisation_location_path(group, location), group, :update, 'locations', 'edit'
+		a.show href="." =raw("show&rarr;")
+		a.hide href="." =raw("hide&uarr;")
+
+	.detail.no-bottom
+		.row.half-bottom
+			.three.columns= "Address"
+			.six.columns
+				strong= location.address

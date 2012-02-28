@@ -1,0 +1,12 @@
+= content_for :sidebar do
+	== render :partial => "sidebar/user"
+
+== render :partial => "links"
+
+= semantic_form_for staff, :url => profile_path, :validate => true do |f|
+	.five.columns
+		== render :partial => "form/personal", :locals => { :f => f, :person => staff }
+		== render :partial => "form/contact", :locals => { :f => f, :person => staff }
+		= submit f, :save, current_user, :update
+	.five.columns
+		== render :partial => "form/address", :locals => { :f => f, :person => staff }

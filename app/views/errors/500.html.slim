@@ -1,0 +1,8 @@
+= content_for :sidebar do
+	=title "Application Failure"
+
+article
+	| Unfortunately, we're not perfect and something has gone wrong. Please contact technical support and quote the error message shown below.
+
+article.row.remove-bottom
+	.message.error= @message

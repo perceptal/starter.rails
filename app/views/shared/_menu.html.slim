@@ -1,0 +1,12 @@
+nav#menu.two.columns.omega  
+	ul class=area_name
+		li.user data-area='user'
+			=link :dashboard, dashboard_path, User
+
+		li.staff data-area='staff'
+			=link :staff, staff_index_path, Staff
+
+		li.organisations data-area='organisations'
+			=link :administration, admin_organisations_path, Group
+
+		li.loading Loading...

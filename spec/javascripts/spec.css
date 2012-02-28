@@ -1,0 +1,5 @@
+/*
+ *= require jasmine
+ *= require application
+ */
+.jasmine_reporter { display: none; }

@@ -1,0 +1,27 @@
+article.list data-index=role_counter
+	.view.row.remove-bottom
+		.five.columns
+			strong=role.name
+		.five.columns
+			- Permission.resources.each do |resource|
+				div
+					.two.columns=resource
+					.three.columns
+						span.small
+							= permission_for_display(role, resource)
+		
+	- if can? :update, group
+		.edit.row.remove-bottom
+			= semantic_form_for role, :url => admin_organisation_role_path(group, role), :validate => true, :namespace => "permissions_#{role_counter}" do |f|
+				.five.columns
+					= f.inputs do
+						= f.input :name, :label => false
+						= submit f, "Save", group, :update
+				.five.columns.pad
+					- Permission.resources.each do |resource|
+						div
+							.two.columns=resource
+							.three.columns
+								fieldset
+									= select("permissions", resource.downcase, Permission.permissions, { :selected => permission_for(role, resource) }, :class => "inline")
+	
