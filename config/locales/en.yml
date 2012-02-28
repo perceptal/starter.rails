@@ -37,8 +37,8 @@ en:
   hide: "hide"
   show_all: "show all"
   hide_all: "hide all"
-  saving: "Saving..."
   save: "Save"
+  saving: "Saving..."
   delete: "Deleting..."
   
   error:
@@ -177,9 +177,11 @@ en:
       error: "There was an problem during registration"
       
     employment:
+      success: "The employment information has been saved"
+      error: "There was a problem saving the information"
       save: "Save"
-      
-    save:
+
+    update:
       success: "The staff information has been saved"
       error: "There was a problem saving the information"
       

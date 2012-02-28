@@ -17,9 +17,13 @@ module MenuHelper
   end
   
   def submit(f, name, resource=nil, permission=:update, message=nil)
-    text = raw(I18n.t(name, :scope => "#{controller_name}.#{action_name}") + " &rarr;")
+    text = I18n.t(name, :scope => "#{controller_name}.#{action_name}", :default => I18n.t(:save))
+    text = raw(text + " &rarr;")
+    
+    message = I18n.t(message, :scope => "#{controller_name}.#{action_name}", :default => I18n.t(:saving))
+    
     if resource.nil? || can?(permission, resource)
-      f.submit text, "data-submit-message" => I18n.t(message, :scope => "#{controller_name}.#{action_name}")
+      f.submit text, "data-submit-message" => message
     else
       f.submit text, :disabled => true
     end

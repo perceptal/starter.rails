@@ -26,4 +26,6 @@ Starter::Application.configure do
   config.assets.compress = false
   
   Slim::Engine.set_default_options :pretty => true
+  
+  config.i18n.fallbacks = true
 end
