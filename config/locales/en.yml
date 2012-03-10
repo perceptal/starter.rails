@@ -14,7 +14,7 @@ en:
         confirmation: "and confirm it below"
 
   name: "Starter"
-  title: "Starter &rarr; Get Going"
+  title: "Starter &rarr; Demo App"
   response: "Page loaded in <em>%{time}</em> seconds"
   action: "Select Action"
   page: "Select Page"

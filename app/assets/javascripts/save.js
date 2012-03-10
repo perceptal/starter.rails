@@ -30,7 +30,8 @@ app.save = (function() {
 		document.body.style.cursor = "wait";
 
 		var button = form.find("input[type='submit']");
-		button.attr("data-value", button.val());
+		button.data("value", button.val());
+		
 		button
 			.attr("disabled", true)
 			.val(button.attr("data-submit-message") || I18n.t("saving"));
@@ -41,7 +42,7 @@ app.save = (function() {
 
 		button
 			.attr("disabled", false)
-			.val(button.attr("data-value") || I18n.t("save") + "&rarr;");
+			.val(button.data("value") || (I18n.t("save") + "&rarr;"));
 	}
 			
 	return {
