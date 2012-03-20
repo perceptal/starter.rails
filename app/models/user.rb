@@ -33,10 +33,6 @@ class User < ActiveRecord::Base
     people.where(:type => "Staff").limit limit
   end
 
-  def patients(limit=6)
-    people.where(:type => "Patient").limit limit
-  end
-
   def encrypt_password
     if password.present?
       self.salt = BCrypt::Engine.generate_salt
