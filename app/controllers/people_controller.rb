@@ -9,7 +9,7 @@ class PeopleController < AuthenticatedController
   
   expose(:person) { Person.find_by_id(params[:id]) }
   expose(:owner) { params[:controller].singularize.downcase }
-  expose(:recents) { current_user.send("#{controller_name}").secured current_user.person.security_key if current_user }
+  expose(:recents) { current_user.send("#{controller_name}").secured security_key if current_user }
   
   expose(:active) { list_active.limit(limit).offset(skip) }
   expose(:inactive) { list_inactive.limit(limit).offset(skip) }
@@ -58,10 +58,10 @@ class PeopleController < AuthenticatedController
   end
   
   def list_active
-    Person.secured(current_user.person.security_key).where(:type => owner.titleize, :left_on => nil)
+    Person.secured(security_key).where(:type => owner.titleize, :left_on => nil)
   end
   
   def list_inactive
-    Person.secured(current_user.person.security_key).where("type = :type AND left_on IS NOT NULL", :type => owner.titleize)
+    Person.secured(security_key).where("type = :type AND left_on IS NOT NULL", :type => owner.titleize)
   end
 end

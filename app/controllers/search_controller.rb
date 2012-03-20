@@ -4,8 +4,8 @@ class SearchController < AuthenticatedController
   expose(:query) { params[:q] || "" }
   expose(:search) { params[:s] || "" }
   expose(:type) { (params[:t] || "").singularize.titleize }
-  expose(:people) { Searcher.search(query, type, skip, PAGE_SIZE, current_user.person.security_key) } 
-  expose(:total) { Searcher.count(query, type, current_user.person.security_key) } 
+  expose(:people) { Searcher.search(query, type, skip, PAGE_SIZE, security_key) } 
+  expose(:total) { Searcher.count(query, type, security_key) } 
   
   def index  
     if total == 1 && request.format == :html

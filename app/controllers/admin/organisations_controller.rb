@@ -1,7 +1,7 @@
 class Admin::OrganisationsController < Admin::GroupController
   respond_to :html, :json
   
-  expose(:groups) { Group.secured(current_user.person.security_key).find_all_by_is_primary true }
+  expose(:groups) { Group.secured(security_key).find_all_by_is_primary true }
   expose(:group)
   
   def index

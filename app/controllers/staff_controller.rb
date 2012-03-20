@@ -105,10 +105,10 @@ class StaffController < PeopleController
     query = "left_on IS NULL AND " + query if active_only
     
     if params[:q] && params[:q].length > 0
-      Staff.secured(current_user.person.security_key).where(query, :query => params[:q].upcase + "%")
+      Staff.secured(security_key).where(query, :query => params[:q].upcase + "%")
     else
       if params[:id] && params[:id].length > 0
-        Staff.secured(current_user.person.security_key).find(params[:id])
+        Staff.find(params[:id])
       else
         []
       end

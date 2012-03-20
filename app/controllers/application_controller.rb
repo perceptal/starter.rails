@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   before_filter :init, :set_locale
   
   PAGE_SIZE = 8.freeze unless defined? PAGE_SIZE
-  DOMAIN_NAME = "starter".freeze unless defined? DOMAIN_NAME
+  DOMAIN_NAME = "starter-rails".freeze unless defined? DOMAIN_NAME
   
   expose(:page) { get_page :p }
   expose(:skip) { get_skip page }
@@ -25,6 +25,14 @@ class ApplicationController < ActionController::Base
       else
         session[:user_id] = nil
       end
+    end
+  end
+  
+  expose(:security_key) do
+    if current_user
+      current_user.person.security_key
+    else
+      0..0
     end
   end
   
