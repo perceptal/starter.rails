@@ -134,10 +134,6 @@ en:
         address_country: "Country"
         address_postcode: "Postcode"
 
-  search:
-    index:
-      results: "Search Results"
-
   people:
     recent: 
       no_recent: "No recent #{name}"

@@ -128,7 +128,7 @@ app.searching = (function() {
 		}
 		else if (data.total === 0) {
 			type = "warning";
-			message = I18n.t("search.index.no_results");
+			message = I18n.t("search.index.no_result");
 		}
 		else if (data.total == 1) {
 			message = I18n.t("search.index.one_result");

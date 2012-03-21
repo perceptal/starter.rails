@@ -1,6 +1,8 @@
 class SearchController < AuthenticatedController
   respond_to :html, :json
     
+  skip_before_filter :authenticate!, :only => :index
+    
   expose(:query) { params[:q] || "" }
   expose(:search) { params[:s] || "" }
   expose(:type) { (params[:t] || "").singularize.titleize }
